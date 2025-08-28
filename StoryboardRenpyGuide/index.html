@@ -1,0 +1,632 @@
+<!DOCTYPE html><meta charset="utf-8"><p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/storyboard-banner.BkRCrd2h_Z8Cbc2.webp" alt="Storyboard Banner" loading="lazy" decoding="async" fetchpriority="auto" width="6688" height="2192"></p>
+<h1 id="storyboard-renpy-guide-document">Storyboard Ren’Py Guide Document</h1>
+<p>Hi everyone! It’s Kat (@kat on Slack) and this is the written guide to How to Start Making a Ren’Py Game: adapted from the Ren’Py Quickstart Documentation &#x26; Shyla (@sprinkles on Slack)‘s Ren’Py Tutorial Slideshow :D  (view her slideshow <a href="https://www.canva.com/design/DAGwqnw-zrA/nUfHDVqLM1OQacNYaXwrtw/edit?utm_content=DAGwqnw-zrA&#x26;utm_campaign=designshare&#x26;utm_medium=link2&#x26;utm_source=sharebutton">here</a>)</p>
+<p>I made this guide (NO SHADE I LOVE YOUR SLIDE SM SHYLA IT’S JUST ME) because I prefer reading docs to slides/YT tutorials, but sometimes reading official documentation can be super hard &#x26; confusing, especially when they throw a bunch of terms at you that you don’t understand ‘cause you’re a beginner D: as a certified ex-struggler, I decided to write this document to break the confusing documentation curse LOL &#x26; after this you should hopefully understand enough to look at the official documentation and (mostly) understand!!</p>
+<p>If you ever need help, have questions, or are running into problems while creating your game, reach out on #storyboard, or DM me (@kat) or any of the other organizers on the Hack Club Slack! We’re happy to help answer any questions you have :P</p>
+<blockquote>
+<p>I (Kat) made this which means I get to license it! View the license <a href="/licensepage/">here :D</a></p>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p>Trying to find something? Here’s a table of contents!</p>
+<ol>
+<li><a href="#before-we-start">Downloading VSCode</a></li>
+<li><a href="#step-1-download-renpy">Downloading Ren’Py</a></li>
+<li><a href="#step-2-lets-check-out-an-example-game">Example Game</a></li>
+<li><a href="#step-3-creating-your-game">Creating Your Game</a>
+<ul>
+<li><a href="#renpy-launcher-tour-in-detail">Ren’Py Launcher Tour</a></li>
+</ul>
+</li>
+<li><a href="#step-4-vscode-setup-continued">VSCode Setup</a></li>
+<li><a href="#step-5-github-desktop-setup">GitHub Setup</a></li>
+<li><a href="#step-6-time-to-code">Time to Code!!</a>
+<ul>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#label-statements">Label Statements</a></li>
+<li><a href="#say-statements">Say Statements</a></li>
+<li><a href="#characters">Characters</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#positions">Positions</a></li>
+<li><a href="#audio">Audio</a></li>
+<li><a href="#pausing--ending-your-game">Pausing &#x26; Ending Your Game</a></li>
+<li><a href="#lets-put-it-all-together">Let’s Put It All Together!</a></li>
+<li><a href="#using-menu">Using Menu (Making Options for the Player)</a>
+<ul>
+<li><a href="#python--variables-in-menu">Python &#x26; Variables in Menu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#step-7-hmm-what-else">Stuck? Here’s some ideas for your game!</a></li>
+<li><a href="#step-8-you-did-it--more-documentation-0">You did it! + More Resources/Docs</a></li>
+</ol>
+<h2 id="before-we-start">Before we start…</h2>
+<p>Download Visual Studio Code! (link <a href="https://code.visualstudio.com/download">here</a>)</p>
+<ul>
+<li>Not only does Visual Studio make coding SO MUCH EASIER with autocomplete, extensions, debugging, Git, and a built in Terminal, it also facilitates time tracking with Hackatime!</li>
+<li>click <a href="https://www.canva.com/design/DAGwtXqXZN8/D1SXl-_I6ncKPsh8myZCrg/view?utm_content=DAGwtXqXZN8&#x26;utm_campaign=designshare&#x26;utm_medium=link2&#x26;utm_source=uniquelinks&#x26;utlId=hc24f03c5b7">here</a> to learn how to track your time coding for Storyboard with Hackatime :D</li>
+<li>there will be more about VSCode setup with Ren’Py after we download Ren’Py, but for now get Hackatime set up :D</li>
+</ul>
+<h2 id="step-1-download-renpy">Step 1: Download Ren’Py</h2>
+<p>click <a href="https://www.renpy.org/latest.html">here</a>
+for the download link!</p>
+<h3 id="for-windows">For Windows</h3>
+<ul>
+<li>click “Download SDK 7z.exe”</li>
+<li>Double-click file</li>
+<li>Open folder “renpy-&#x3C;version>”</li>
+<li>Run renpy.exe (or renpy)</li>
+</ul>
+<h3 id="for-linux">For Linux</h3>
+<ul>
+<li>Click “Download ARM Linux (Raspberry Pi and Chromebook) SDK tar.bz2”</li>
+<li>unpack tarball</li>
+<li>Go to “renpy-&#x3C;version>”</li>
+<li>Run renpy.sh</li>
+</ul>
+<h3 id="for-mac">For Mac</h3>
+<ul>
+<li>Double-click file</li>
+<li>Drag renpy-<version> somewhere else</version></li>
+<li>Open it and run renpy!</li>
+</ul>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/launcher.WYqOPPS9_Z113K28.webp" alt="Ren'Py Launcher" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="600"></p>
+<p>This is what the Ren’Py launcher should look like when you download &#x26; open it.</p>
+<h2 id="step-2-lets-check-out-an-example-game">Step 2: Let’s check out an example game!</h2>
+<p>When you open the Ren’Py launcher, under “Projects” there should be two tabs: “Tutorial” and “The Question.” You want to click on “The Question” and then click “Launch Project” to play the visual novel!
+When you’re in the visual novel, you want to press Start to play the game, and when you want to exit, press esc on your keyboard, then press Quit.</p>
+<h3 id="a-quick-refresher">A quick refresher…</h3>
+<p>If you ever want a refresher on anything you learn, check out the Tutorial game! To open it, you want to click the “Tutorial” tab, then click “Launch Project”.
+Now that you know a bit about Ren’Py, wou can start making your very own visual novel!!</p>
+<h2 id="step-3-creating-your-game">Step 3: Creating your game</h2>
+<p>Exciting!! To make your game, Click ”+ Create New Project” under the projects.</p>
+<h3 id="lets-set-the-game-up">Let’s set the game up…</h3>
+<h4 id="language">Language</h4>
+<ul>
+<li>If accurate, press <em>Continue</em></li>
+<li>Otherwise, click <em>preferences</em> in the bottom right corner of the screen, change the language settings, and click Return</li>
+</ul>
+<h4 id="name-your-project-then-click-continue-in-the-bottom-right">Name your project, then click <em>continue</em> in the bottom right!</h4>
+<p>When Ren’Py asks you what you want your game resolution to be, select <strong>1920x1080</strong> and click <em>Continue</em> (This is important because you’ll want to make the canvas size of all your backgrounds 1920x1080 so your backgrounds fit your game!)
+Next, select a project directory (aka any folder you want - or create one called RenPy games! this directory will house <em>all</em> your future Ren’Py games as well.)
+Then, choose a colour scheme! Select a colour and click <em>Continue</em> in the bottom right. Don’t stress too hard about this - you can always change the colours and designs of everything in your game later!</p>
+<h3 id="now-that-youve-set-up-your-project-name-should-be-on-the-left-sidebar-with-tutorial-and-the-question">Now that you’ve set up, your project name should be on the left sidebar with “Tutorial” and “The Question”!</h3>
+<p>If you don’t see it, press <em>refresh</em>.
+P.S. Don’t worry if you don’t see your color scheme, we’re not inside your game yet! We’re still in the RenPy launcher.</p>
+<p>Click <em>Launch Project</em> In the bottom right corner. Another window with your game should open!</p>
+<ul>
+<li>By default, this is your game’s icon:</li>
+<li><img  src="/Storyboard-Renpy-Guide-Doc/_astro/renpy-icon.zM-Xu40A_1txbmN.webp" alt="Ren'Py Default Icon" loading="lazy" decoding="async" fetchpriority="auto" width="125" height="176"></li>
+<li>You can change it later!</li>
+</ul>
+<p>Press <em>Quit</em> to close your game D:</p>
+<h2 id="renpy-launcher-tour-in-detail">Ren’Py Launcher Tour (in detail!)</h2>
+<p>Now, let’s go through everything on the Ren’Py launcher screen and see what they do! You don’t have to memorize this… just click on stuff and see what pops up! You’ll learn after clicking enough things :D</p>
+<p>Another picture of the Ren’Py launcher for reference:</p>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/launcher.WYqOPPS9_Z113K28.webp" alt="Ren'Py Launcher" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="600"></p>
+<p>There are three sections: Open Directory, Edit File, and Actions (or Navigate Script depending on which version of Ren’Py you have). Let’s go through them one by one:</p>
+<h3 id="open-directory">Open Directory</h3>
+<p>There are five tabs: game, base, images, audio, and gui.</p>
+<blockquote>
+<h4 id="game">game</h4>
+<blockquote>
+<p>this opens the game folder with all of the game’s files!</p>
+</blockquote>
+<h4 id="base">base</h4>
+<blockquote>
+<p>this opens a folder that CONTAINS the game folder with a few more files! (it also has the same name as your project :0)</p>
+</blockquote>
+<h4 id="images">images</h4>
+<blockquote>
+<p>this is where you can add images to use in your game, such as backgrounds, character sprites, etc.!</p>
+</blockquote>
+<h4 id="audio">audio</h4>
+<blockquote>
+<p>this is where you can add audio to use in your game, such as sound effects &#x26; music!</p>
+</blockquote>
+<h4 id="gui">gui</h4>
+<blockquote>
+<p>GUI stands for Graphical User Interface, which is basically what lets users navigate your game using buttons &#x26; menus! The gui folder contains different buttons, icons, text boxes, etc. that are used in the GUI of your game.</p>
+</blockquote>
+</blockquote>
+<h3 id="edit-file">Edit File</h3>
+<p>There are five tabs: script.rpy, options.rpy, gui.rpy, screens.rpy, and All script files.</p>
+<blockquote>
+<h4 id="scriptrpy">script.rpy</h4>
+<blockquote>
+<p>This opens script.rpy, the main script file you’ll be coding in!</p>
+</blockquote>
+<h4 id="optionsrpy">options.rpy</h4>
+<blockquote>
+<p>This opens options.rpy, which has other settings about your game!</p>
+</blockquote>
+<h4 id="guirpy">gui.rpy</h4>
+<blockquote>
+<p>This opens gui.rpy. gui.rpy controls the elements we talked about in <em>gui</em> before: buttons, icons, text boxes, etc. You can customize and code those elements with gui.rpy!</p>
+</blockquote>
+<h4 id="screensrpy">screens.rpy</h4>
+<blockquote>
+<p>Ren’Py is comprised of different screens, such as the main menu, the say screen (AKA the dialogue screen with characters), and the choice screen (AKA when players can choose dialogue options). If you wish to make your game interactive, you can make custom screens and code them here! If not, you don’t have to worry about this part :D</p>
+</blockquote>
+</blockquote>
+<h3 id="navigate-scriptactions">Navigate Script/Actions</h3>
+<p>There are 10 tabs: Navigate Script, Check Script (Lint), Change/Update GUI, Delete Persistent, Force Recompile, Build Distributions, Android, iOS, Web, Generate Translation, and Extract Dialogue. We’re only covering a few of those in this document:</p>
+<blockquote>
+<h4 id="check-script-lint">Check Script (Lint)</h4>
+<blockquote>
+<p>This shows errors and some fun stats about your game!</p>
+</blockquote>
+<h4 id="changeupdate-gui">Change/Update GUI</h4>
+<blockquote>
+<p>You can use this to change the colour scheme you chose earlier to a different colour without needing to fiddle with the code in gui.rpy! However, if you have custom buttons/text boxes/other UI elements, they will be overwritten if you use this. D:</p>
+</blockquote>
+<h4 id="build-distributions">Build Distributions</h4>
+<blockquote>
+<p>This is simply a title! It means that when you click the different options underneath it (Android, iOS, Web), Ren’Py will generate a finished playable <em>build</em> of your game so you can <em>distribute</em> it to the different platforms you picked. (Android, iOS, Web) For Storyboard, you will export for Web, but if you wish to export your game to other platforms, you can simply click all the different options to generate different builds!</p>
+</blockquote>
+<h4 id="generate-translations">Generate Translations</h4>
+<blockquote>
+<p>If you want to translate your game into other languages, you can generate translations directly in Ren’Py by clicking this.</p>
+</blockquote>
+<h4 id="extract-dialogue">Extract Dialogue</h4>
+<blockquote>
+<p>If you need to see the dialogue from your game, you can extract it without having to fiddle with the code in script.rpy/transcribe the dialogue yourself by using this option!
+Now that you know everything about the launcher, let’s continue our VSCode setup and start coding! (yay!!)</p>
+</blockquote>
+</blockquote>
+<h2 id="step-4-vscode-setup-continued">Step 4: VSCode Setup (continued)</h2>
+<p>Now, we’re going to add your Ren’Py files to VS Code. We will find the folder with the same name as the (AKA base) and add it to VS Code!</p>
+<ol>
+<li>open the Ren’Py launcher and click <strong>base</strong></li>
+<li>Ren’Py should have opened a folder with your game’s name. Go to the directory (folder) that contains your base folder.</li>
+<li>Drag your base folder into VSCode!</li>
+</ol>
+<h2 id="step-5-github-desktop-setup">Step 5: Github Desktop Setup</h2>
+<p>For Storyboard (+ this is good practice for coding in general), you <strong>have</strong> to use GitHub to store your project files. You can add changes, collaborate with others, and see your version history! If you already know how to setup Github &#x26; Github Desktop, go ahead on your own. If not, let’s go through this together!</p>
+<ol>
+<li>Download the GitHub Desktop app <a href="https://desktop.github.com/download/">here</a></li>
+<li>Go to Github Web (their website, <a href="https://github.com">github.com</a>) &#x26; create a new Repository by pressing the ”+” button in the top-right corner. (+ sign up if you haven’t already!)</li>
+<li>Name your repository &#x26; add a description, README.md, and (optional) LICENSE.md!</li>
+<li>Go back to Github Desktop: you’re going to create a local clone of the repository you made on Github Web.</li>
+</ol>
+<blockquote>
+<p>Note: local = something that only exists on your device &#x26; cannot be accessed by anyone on the Internet! for example, if you take a picture on your phone, it will be local, but if you upload that photo to Instagram for your friends to see, the picture on Instagram will not be local anymore! When we make a local clone of the Github Web repository, we basically download all the files from Github Web onto our device.</p>
+</blockquote>
+<ol start="5">
+<li>open the Ren’Py launcher and click <strong>base</strong> Ren’Py should have opened a folder with your game’s name!</li>
+<li>copy all the contents of that folder (don’t worry, we’ll paste it soon!)</li>
+<li>back to Github Desktop: press “View the files of your repository in Explorer”. This will open a local folder that contains the clone of your repository! Now, paste the contents of your base folder into this folder.</li>
+<li>go BACK to Github Desktop: you will see that the screen changed, as you added many new files! You want to <strong>commit</strong> these changes, and then <strong>push</strong> them back to your repository on Github Web. In the bottom-left corner of the window, there should be a few boxes asking you to write a summary and (optional) description. Quickly fill those boxes out, then press “commit to main”.</li>
+<li>Next, in the top bar with “Current repository” and “Current branch,” you’ll see a button that says “Push to origin”. This <strong>pushes</strong> your changes to the local clone you made back to Github Web, so everyone can see your changes! Press this button.</li>
+<li>Go back to Github Web! Hopefully you’ll see your changes to the web repository, and if they don’t show up, try refreshing the page. You can also always reach out on the Hack Club Slack to #storyboard, or DM me (@kat) if things aren’t working!</li>
+</ol>
+<h2 id="step-6-time-to-code">Step 6: Time to Code!!</h2>
+<p>Setup is a lot of work, but now it’s finally over!! It’s time to start coding!! Make sure to open your files via VSCode, and check if your Hackatime is tracking. Save your project (ctrl+S or cmd+S) regularly to make sure nothing gets lost if your VSCode runs into an error unexpectedly. It’ll automatically update the file &#x26; connect with Ren’Py!</p>
+<h3 id="open-up-scriptrpy-in-vscode">Open up script.rpy in VSCode</h3>
+<p>script.rpy is the main script of the game, where you’ll be adding dialogue, options for the player, changing characters/backgrrounds, and switching between scenes. (again, make sure you’re opening it through VSCode so your time gets tracked!!!) Let’s go through a few concepts to help get a hang of coting in script.rpy.</p>
+<h3 id="comments">Comments</h3>
+<p>Comments are notes you can add to your code that won’t affect anything!
+You use them to explain what your code does, and separate sections of code, which makes your code easier to read :D</p>
+<p>In Ren’Py, comments start with # like this: # Comment</p>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/comments-example.DcgTB_8D_Zcffq7.webp" alt="script.rpy Comment Examples" loading="lazy" decoding="async" fetchpriority="auto" width="605" height="560"></p>
+<h3 id="label-statements">Label Statements</h3>
+<p>Label statements name a spot in the program. Add labels to skip to different parts of your game! (ex. good ending, bad ending, start)</p>
+<ul>
+<li>everything within a label MUST be indented.</li>
+</ul>
+<blockquote>
+<p>note: indents are SUPER important in Ren’Py! if your game suddenly stops working, it might be because you indented something wrong.</p>
+</blockquote>
+<ul>
+<li><strong>start</strong> is a special label that runs when the game starts.</li>
+<li>here’s an example of label start:</li>
+</ul>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/label-example.C0ktGWUp_ez8EM.webp" alt="Ren'Py Label Example" loading="lazy" decoding="async" fetchpriority="auto" width="596" height="516"></p>
+<h3 id="say-statements">Say Statements</h3>
+<p>There are 2 types of say statements:</p>
+<ul>
+<li>Narration: “This is what the narrator said!”</li>
+<li>Dialogue: “Karbohydrate” “This is what Karbohydrate said!”</li>
+<li>When a character is saying something, you want to first put their name in quotation marks (or a constant that represents them), and then put what they say in another pair of quotation marks.</li>
+<li>You only need to add one pair of quotation marks for the narrator, because there is no name to put first. (it’s just the narrator!)
+If your (string dialogue or narration text has a quotation mark in it (“like this”)), put a backslash \ before it.</li>
+</ul>
+<p>For example:</p>
+<p>“Karbohydrate” “My friend said \”I love Storyboard!”\, and I’m thinking about joining!”</p>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/say-example.DmATPeel_XVlfH.webp" alt="script.rpy Say Statement Example" loading="lazy" decoding="async" fetchpriority="auto" width="602" height="535"></p>
+<h3 id="characters">Characters</h3>
+<p>Remember how I said you can use a constant that represents a character? Now let’s go through that!</p>
+<p>Imagine typing out every character’s name every single time. You would have to type that out SO many times… it’d be terrible. Instead, define characters at the top of script.rpy. Give them a name, accent color, and shortened name to type. this shortened name is often called a <strong>constant</strong> in coding.</p>
+<blockquote>
+<p>note: constants are used throughout coding across various languages, not just Ren’Py!</p>
+</blockquote>
+<p>for example: define k = Character(‘Kat’, color=“#ccccff”)</p>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/characters-example.-Z5_JZz5_ZccboB.webp" alt="script.rpy Character Example" loading="lazy" decoding="async" fetchpriority="auto" width="520" height="169"></p>
+<p>Here’s an example script with everything we just learned!</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>define kr = Character("Karbohydrate", color="#f07cb6ff")</span></span>
+<span class="line"><span>define kash = Character("Kashyap")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>label start:</span></span>
+<span class="line"><span>    kr "Yo Kash is that you??? Kashmoney???"</span></span>
+<span class="line"><span>    kash "Uhh... My name isn't Kashmoney..."</span></span>
+<span class="line"><span>    "What an awkward situation... looks like Karbohydrate got someone's name wrong... yikes"</span></span></code></pre>
+<p>Karbohydrate’s name is shortened as kr, and Kashyap is shortened to kash to make writing dialogue easier. <code>color="#f07cb6ff"</code> means Karbohydrate’s name will appear in pink!</p>
+<p>Because there’s no character name in the last line, the narrator will say the last line!</p>
+<blockquote>
+<p>note: when you have multiple characters with the same starting letter, it’s good to make their constant/shortened names different &#x26; distinguishable, so you can tell who’s who at a glance &#x26; not make any confusing typos.
+for example:
+good constant names: kr (Karbohydrate), kash (Kashyap)
+bad constant names: ka (Karbohydrate), ks (Kashyap) (not only are the constants very similar, a and s are also right next to eachother on the keyboard, so it’ll be super easy to make typos!!! D:)</p>
+</blockquote>
+<blockquote>
+<p>note: Wait, what’s the difference between a constant and a variable?? (Variables are discussed <a href="#python--variables-in-menu">later</a> in this document, but if you already sorta know what they are and are confused about the difference between the two, this might help!)</p>
+<p>Well, constants are defined <em>once</em> and cannot be changed throughout the game (like the Character constants we discussed earlier, the maximum amount of health in a healthbar, or the game title!), so their value stays <em>constant</em>, but variables can change throughout the game. (ex. amount of money/health a character has, the location of the character, a score, etc.)</p>
+<p>TLDR: both variables &#x26; constant are a little word/phrase you use to represent something! However, the value of the things variables represent vary, and the value of the things constants represent stay constant :D (the name kinda explains it lol)</p>
+</blockquote>
+<h3 id="images-1">Images</h3>
+<p>Yay! Now our characters are speaking, but they… don’t really exist… and there’s no settings for them to be either… How do we solve this? With images! Let’s add pictures to our <em>visual</em> novel :D</p>
+<p>Each image has a name, which is made up of a tag and some attributes. Name your images accordingly!! (this will be elaborated upon in a bit, don’t worry)</p>
+<ul>
+<li>In the image bg room, the tag is bg (short for background), and the attribute is room.</li>
+<li>In the image eileen happy, the tag is eileen (a character) and the attribute is happy.</li>
+</ul>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/images-example.BVGUTr8-_aD7ID.webp" alt="script.rpy Image Example" loading="lazy" decoding="async" fetchpriority="auto" width="577" height="503"></p>
+<p>If we add another eileen image called <strong>eileen coffee</strong>, and we want eileen coffee to show up onscreen, but <strong>eileen happy</strong> is already onscreen, <strong>eileen coffee</strong> will <em>replace</em> <strong>eileen happy</strong>. The same concept is applied in backgrounds: if we have <strong>bg cafe</strong>, but <strong>bg room</strong> is already onscreen, when we code in <strong>bg cafe</strong>, it will <em>replace</em> <strong>bg room</strong>.
+So… that’s great and all, but how do we add more pictures?</p>
+<h4 id="adding-more-images">Adding More Images</h4>
+<p>Let’s say in your visual novel your character Eileen goes to the cafe to meet up with her friend, Nico. You want to add a picture of Eileen with coffee, a picture of Nico, and a cafe background.</p>
+<ol>
+<li><strong>Name your images</strong></li>
+</ol>
+<p>Let’s follow the Ren’Py naming conventions! For Eileen’s coffee sprite, we first start with our tag, eileen. After that, because she’s drinking coffee, we’ll add coffee, so the full name of the image will be eileen coffee.webp (or any image format that renpy accepts! I’m using .webp in this example because .webp pictures load a bit faster than .png or .jpg, so I like to use them + reccomend you to use them too!!)</p>
+<blockquote>
+<p>note: characters must be .png, .webp, or .avif.</p>
+<p>backgrounds must be .jpg, .jpeg, .png, .webp, or .avif.</p>
+</blockquote>
+<p>let’s name Nico’s sprite as well using these rules:</p>
+<blockquote>
+<p>characters must start with (characterName) as a tag, and then have any attributes you want.</p>
+<p>backgrounds must start with bg as a tag, and then have any attributes you want.
+hopefully Nico is happy to see their friend! let’s name the sprite nico happy.webp.</p>
+</blockquote>
+<p>Let’s keep following the naming conventions! We’ll call the background bg coffee.webp.
+2. <strong>upload your images!!</strong>
+Now that we have the images, how do we add them to our game?? Well, we first have to add them to our image directory. (AKA folder)</p>
+<ul>
+<li>let’s go back to the Ren’Py launcher!</li>
+<li>click on <em>images</em> to open your game’s image folder.</li>
+<li>upload your correctly-named images to the folder!</li>
+<li>they should be able to be used in your game’s code now :D</li>
+<li>now let’s add them to our game!!!</li>
+</ul>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/images-launcher-example.DWzp9LH0_Z1VsOQ7.webp" alt="How to Upload Images from Ren'Py Launcher" loading="lazy" decoding="async" fetchpriority="auto" width="529" height="391"></p>
+<ol start="3">
+<li><strong>code your images into the game!</strong>
+Before we start, a quick note…</li>
+</ol>
+<blockquote>
+<p>note: let’s say you uploaded an image called <em>amber super happy.webp</em>, but you don’t wanna type allat… super happy? that’s too wordy! Well, there’s a solution for that! at the top of your code, you can write:</p>
+<p><code>image amber happy = "amber super happy.webp"</code></p>
+<p>so you can simply use <em>amber happy</em> to use that image instead!</p>
+</blockquote>
+<p>Now that your images are in the folder, we can use them! There are a few ways to show, hide, and change images. Here are some examples:</p>
+<blockquote>
+<p>Remember:  <strong>#</strong> is a comment, so it won’t affect the code.</p>
+</blockquote>
+<h4 id="examples">Examples</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>scene bg room</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># clears all images, shows “bg room.webp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#shows “eileen happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>scene bg cafe</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#clears all images, shows “bg cafe.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#shows “eileen happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show amber happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#shows amber super happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show nico happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#shows “nico happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show nico coffee</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#there’s already an image with the tag nico, so nico coffee.webp” replaces nico happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hide eileen</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#removes image with eileen tag</span></span></code></pre>
+<p>There are a few more elements before we can have a nice scene for our visual novel. The characters appear onscreen, but they don’t say anything! You can add dialogue in-between the characters’ appearances.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># defining characters for dialogue</span></span>
+<span class="line"><span>define e = Character("Eileen")</span></span>
+<span class="line"><span>define n = Character("Nico")</span></span>
+<span class="line"><span>define a = Character("Amber")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>label start:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    scene bg room</span></span>
+<span class="line"><span>    # clears all images, shows “bg room.webp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show eileen happy</span></span>
+<span class="line"><span>    #shows “eileen happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e "Wow I'm going outside today! Very shocking for a CS kid!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    scene bg cafe</span></span>
+<span class="line"><span>    #clears all images, shows “bg cafe.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show eileen happy</span></span>
+<span class="line"><span>    #shows “eileen happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e "Hey guys!!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    "Two people walk through the door, Nico and Amber. They're Eileen's friends from school, and they forced her to come outside after she was stuck coding inside for four days straight because they were concerned for Eileen's health."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show amber happy</span></span>
+<span class="line"><span>    #shows amber super happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    a "I'm so glad you came today Eileen!!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show nico happy</span></span>
+<span class="line"><span>    #shows “nico happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    n "Yo imma go get some coffee real quick! Good to see you guys!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show nico coffee</span></span>
+<span class="line"><span>    #there’s already an image with the tag nico, so nico coffee.webp” replaces nico happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    n "Guys let's go somewhere else... this coffee is really bad..."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    hide eileen</span></span>
+<span class="line"><span>    #removes image with eileen tag</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return</span></span></code></pre>
+<h3 id="transitions">Transitions</h3>
+<p>Pretty cool! Our game has visuals now!! There’s still space for improvement though… Let’s quickly add some transitions! :D
+There are a lot of transitions in <a href="https://www.renpy.org/doc/html/transitions.html">this link</a>, but two common ones are <em>dissolve</em> and <em>fade</em>.</p>
+<p>Here are a few examples… Get creative and definitely check out the link above! :D</p>
+<p>Room background with fade transition:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>scene bg room</span></span>
+<span class="line"><span>with fade</span></span></code></pre>
+<p>Eileen happy with dissolve transition:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>show eileen happy</span></span>
+<span class="line"><span>with dissolve</span></span></code></pre>
+<p>Room background with fade transition and eileen happy with fade transition:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>scene bg room</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>with fade</span></span></code></pre>
+<p>Room background with fade transition and eileen
+happy with dissolve transition:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>scene bg room</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>with fade</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>with dissolve</span></span></code></pre>
+<p>Room background with no transition and eileen
+happy with dissolve transition:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>scene bg room</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>with None</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>with dissolve</span></span></code></pre>
+<p>It’s quite self-explanatory, so get creative! There are so many transitions and ways to improve the visuals of your game with Ren’Py :D</p>
+<h3 id="positions">Positions</h3>
+<p>Images usually appear in the middle of the screen, which isn’t ideal when you have multiple characters in the same scene. By default, images are centered horizontally with their bottom edge aligned with the bottom of the screen.</p>
+<p>Position options:</p>
+<ul>
+<li>left</li>
+<li>right</li>
+<li>center (default)</li>
+<li>truecenter (centered horizontally AND vertically)</li>
+</ul>
+<p>examples:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>show eileen happy at left</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy at right</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy at center</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>show eileen happy at truecenter</span></span></code></pre>
+<h3 id="audio-1">Audio</h3>
+<p>Another way to improve your game is adding music + SFX! It doesn’t seem like much, but music &#x26; SFX actually help immerse players and make your game far more engaging!!
+Add files to the audio folder:</p>
+<p><img  src="/Storyboard-Renpy-Guide-Doc/_astro/audio-launcher-example.Dh9y0g9T_Z1ByeyB.webp" alt="Find Audio Button From Ren'Py Launcher" loading="lazy" decoding="async" fetchpriority="auto" width="529" height="390"></p>
+<ol>
+<li>Click on <em>audio</em></li>
+<li>Drag/copy+paste files into that folder! Audio files must be an .mp3, .opus, or ogg vorbis (.ogg)</li>
+</ol>
+<p>&#x26; add this code whenever you want the music to play:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>play music "audio/FILENAME.mp3"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># or:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>play music FILENAME</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># do you want a fade in + out effect? use this code:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>play music FILENAME fadeout 1.0 fadein 1.0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># ^ this fades out the music for 1 second &#x26; fades it in for 1 second as well! you can adjust the time depending on what you want for your game :D</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>queue music FILENAME2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># ^ plays this audio after the previous one ends, hence it's in a queue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>stop music</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>play sound FILENAME3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># ^ this is a sound effect &#x26; it doesn't loop!</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><a href="https://www.renpy.org/doc/html/audio.html">click me for extra resources! :O</a></p>
+<h3 id="pausing--ending-your-game">Pausing &#x26; Ending Your Game</h3>
+<p>Pausing your game is pretty self-explanatory!</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>pause</span></span>
+<span class="line"><span># this makes the game pause until the user clicks.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>pause 3.0</span></span>
+<span class="line"><span># this makes the game pause for 3 seconds!</span></span></code></pre>
+<p>End your game by simply writing <em>return</em>. before you end your game, you should probably say “the end,” or have another indication to players that the game’s ending!</p>
+<h3 id="lets-put-it-all-together">Let’s put it all together!</h3>
+<p>Here’s some example code putting together everything we’ve learned so far. Your code obviously shouldn’t be the exact same, but will definitely have some similar components like dialogue and switching between images!</p>
+<blockquote>
+<p>note: MAKE SURE YOU INDENT AFTER <em>label start:</em> <strong>!!!!</strong> if you don’t, your game won’t work D:</p>
+</blockquote>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># defining characters for dialogue</span></span>
+<span class="line"><span>define e = Character("Eileen")</span></span>
+<span class="line"><span>define n = Character("Nico")</span></span>
+<span class="line"><span>define a = Character("Amber")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>label start:</span></span>
+<span class="line"><span>    play music startMusic</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    scene bg room</span></span>
+<span class="line"><span>    # clears all images, shows “bg room.webp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show eileen happy</span></span>
+<span class="line"><span>    #shows “eileen happy.webp”</span></span>
+<span class="line"><span>    with fade</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e "Wow I'm going outside today! Very shocking for a CS kid!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    scene bg cafe</span></span>
+<span class="line"><span>    #clears all images, shows “bg cafe.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show eileen happy</span></span>
+<span class="line"><span>    #shows “eileen happy.webp”</span></span>
+<span class="line"><span>    with dissolve</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e "Hey guys!!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    "Two people walk through the door, Nico and Amber. They're Eileen's friends from school, and they forced her to come outside after she was stuck coding inside for four days straight because they were concerned for Eileen's health."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show amber happy at left</span></span>
+<span class="line"><span>    #shows amber super happy.webp”</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    a "I'm so glad you came today Eileen!!"</span></span>
+<span class="line"><span>    with fade</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show nico happy at right</span></span>
+<span class="line"><span>    #shows “nico happy.webp”</span></span>
+<span class="line"><span>    with fade</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    n "Yo imma go get some coffee real quick! Good to see you guys!"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    show nico coffee at right</span></span>
+<span class="line"><span>    #there’s already an image with the tag nico, so nico coffee.webp” replaces nico happy.webp”</span></span>
+<span class="line"><span>    with dissolve</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    n "Guys let's go somewhere else... this coffee is really bad..."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    hide eileen</span></span>
+<span class="line"><span>    with dissolve</span></span>
+<span class="line"><span>    play sound disgustedNico </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return</span></span></code></pre>
+<p>This is a nice story, but it’s not really a game yet. After all, it’s not interactive! Let’s add choices for players!</p>
+<h3 id="using-menu">Using Menu</h3>
+<p>This example asks the player if they want to go to the café or park.</p>
+<ul>
+<li>If they choose café, the game jumps to the label cafe, and uses the code in that label.</li>
+<li>If they choose park, the game jumps to the label park, and uses the code in that label.</li>
+</ul>
+<p>With this, you can make branching storylines &#x26; different endings!!</p>
+<blockquote>
+<p>note: after writing <em>menu:</em>, you have to indent the different options!</p>
+</blockquote>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>menu:</span></span>
+<span class="line"><span>    "Let's go to the cafe!"</span></span>
+<span class="line"><span>        jump cafe</span></span>
+<span class="line"><span>    "let's go to the park!"</span></span>
+<span class="line"><span>        jump park</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>label cafe:</span></span>
+<span class="line"><span>    scene bg cafe</span></span>
+<span class="line"><span>    show kashyap coffee at right</span></span>
+<span class="line"><span>    show karb at left</span></span>
+<span class="line"><span>    kr "NO WAY IT'S KASHMONEY AGAIN"</span></span>
+<span class="line"><span>    show kashyap concerned at right</span></span>
+<span class="line"><span>    kash "what the heck..."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>label park:</span></span>
+<span class="line"><span>    scene bg park</span></span>
+<span class="line"><span>    show nico at right</span></span>
+<span class="line"><span>    show amber at left</span></span>
+<span class="line"><span>    "Nico" "Amber let's skip around the park with joys and whimsy!!"</span></span>
+<span class="line"><span>    "Amber" "Okay!!"</span></span>
+<span class="line"><span>    "You" "NOO GUYS WAIT FOR ME D:"    </span></span></code></pre>
+<h4 id="python--variables-in-menu">Python &#x26; Variables in Menu</h4>
+<p>Great! You learned about menus, but you can always add more…</p>
+<p>Maybe you want to keep track of how many points or how much money a character has, or need to save an important decision that the player made for later. You can use Python to store these values in variables! Defining/updating variables should begin with $.</p>
+<p>You can also use if/elif/else statements in Ren’Py instead of labels!</p>
+<blockquote>
+<p>note: remember to indent…</p>
+</blockquote>
+<blockquote>
+<p>note: Wait, what’s the difference between a constant and a variable?? Well, constants are defined <em>once</em> and cannot be changed throughout the game (like the Character constants we discussed earlier, the maximum amount of health in a healthbar, or the game title!), so their value stays <em>constant</em>, but variables can change throughout the game. (ex. amount of money/health a character has, the location of the character, a score, etc.)</p>
+<p>TLDR: both variables &#x26; constant are a little word/phrase you use to represent something! However, the value of the things variables represent vary, and the value of the things constants represent stay constant :D (the name kinda explains it lol)</p>
+<p>P.S. yes this note was also said <a href="#characters">earlier</a> when I was talking about defining characters… I just copy pasted it because it’s important for both of these parts :‘D</p>
+</blockquote>
+<p>example (but with variables):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>menu:</span></span>
+<span class="line"><span>    "Let's go to the cafe!"</span></span>
+<span class="line"><span>        $ location = "cafe"</span></span>
+<span class="line"><span>    "let's go to the park!"</span></span>
+<span class="line"><span>        $ location = "park"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if location == "cafe":</span></span>
+<span class="line"><span>    scene bg cafe</span></span>
+<span class="line"><span>    show kashyap coffee at right</span></span>
+<span class="line"><span>    show karb at left</span></span>
+<span class="line"><span>    kr "NO WAY IT'S KASHMONEY AGAIN"</span></span>
+<span class="line"><span>    show kashyap concerned at right</span></span>
+<span class="line"><span>    kash "what the heck..."</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>elif location == "park":</span></span>
+<span class="line"><span>    scene bg park</span></span>
+<span class="line"><span>    show nico at right</span></span>
+<span class="line"><span>    show amber at left</span></span>
+<span class="line"><span>    "Nico" "Amber let's skip around the park with joys and whimsy!!"</span></span>
+<span class="line"><span>    "Amber" "Okay!!"</span></span>
+<span class="line"><span>    "You" "NOO GUYS WAIT FOR ME D:"    </span></span></code></pre>
+<h2 id="step-7-hmm-what-else">Step 7: Hmm, what else??</h2>
+<p>Stuck on ideas for things to add to your game? Try:</p>
+<ul>
+<li>adding another ending! (or a sidequest!!)</li>
+<li>add a new character</li>
+<li>improve character/background design! (maybe team up with a cool artist? hack club is a great place 2 reach out and make new friends!)</li>
+<li>add/improve music + SFX</li>
+<li>add SFX to the UI (ex. a sound plays after clicking a button!)</li>
+<li>customize the GUI (dialogue box + buttons)</li>
+<li>customize the main menu!</li>
+<li>make a logo for your game :O</li>
+</ul>
+<p>ideas from the Storyboard team &#x3C;3 DM me (@kat, kat wang on HC Slack) if you have more ideas and wanna be on the official Storyboard document… (will give credit!)</p>
+<h2 id="step-8-you-did-it--more-documentation-0">Step 8: YOU DID IT!! + More Documentation :0</h2>
+<p>Yippee!! You read through this whole (well, most of this) document!! Ren’py is capable of a <strong>LOT</strong> more than what’s shown in this introductory tutorial though, so you should totally go through their <a href="https://www.renpy.org/doc/html/index.html">documentation</a>, especially if you have super creative ideas for your game!
+You can learn how to customize <a href="https://www.renpy.org/doc/html/gui.html">buttons and other assets</a>, have <a href="https://www.renpy.org/doc/html/multiple.html">multiple characters talk at the same time,</a>, and more!!</p>
+<p>When you’re done your supercool game and want others to check it out, check out my <a href="https://docs.google.com/presentation/d/1EVhaEfpMS_GuYQo0u2su8s9y8YBbK1J678x35hwhVvU/edit?slide=id.p1#slide=id.p1">guide on how to ship your game on itch.io!</a></p>
+<p>Feel free to ask for help in #storyboard or dm me (@kat, kat wang)/another Storyboard organizer on Hack Club Slack! Thanks again to Shyla (@sprinkles) for making the <a href="https://www.canva.com/design/DAGwqnw-zrA/nUfHDVqLM1OQacNYaXwrtw/edit?ui=eyJEIjp7IlAiOnsiQiI6ZmFsc2V9fX0">original presentation</a> that I adapted into this document :D</p>
+<p>Have fun making your games!!!</p>
+<blockquote>
+<p>the last note: remember to indent properly.</p>
+<p>☆ sincerely, kat the (unofficial but should be official) indent fairy</p>
+</blockquote>
+<p>- kat &#x26; the storyboard team :3</p>
+<p>this document is licensed under the MIT license. <a href="/licensepage">see the full license here</a></p>
+<p><a href="#storyboard-renpy-guide-document">⇧ back to top</a></p>
