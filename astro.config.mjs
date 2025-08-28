@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://ikealoverkat.github.io',
-  base: '/Storyboard-Renpy-Guide-Doc',
+  base: '/storyboard2',
 });
