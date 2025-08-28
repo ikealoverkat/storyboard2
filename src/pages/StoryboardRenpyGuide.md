@@ -12,7 +12,7 @@ I made this guide (NO SHADE I LOVE YOUR SLIDE SM SHYLA IT'S JUST ME) because I p
 
 If you ever need help, have questions, or are running into problems while creating your game, reach out on #storyboard, or DM me (@kat) or any of the other organizers on the Hack Club Slack! We're happy to help answer any questions you have :P 
 
-> I (Kat) made this which means I get to license it! View the license <a href="/licensepage/">here :D</a>
+> I (Kat) made this which means I get to license it! View the license <a href="./licensepage/">here :D</a>
 
 ## Table of Contents
 Trying to find something? Here's a table of contents!
@@ -642,6 +642,6 @@ Have fun making your games!!!
 
 \- kat & the storyboard team :3
 
-this document is licensed under the MIT license. [see the full license here](/licensepage)
+this document is licensed under the MIT license. [see the full license here](./licensepage/)
 
 [⇧ back to top](#storyboard-renpy-guide-document)

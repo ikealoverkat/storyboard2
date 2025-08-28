@@ -10,4 +10,5 @@ export default defineConfig({
   },
   site: 'https://ikealoverkat.github.io',
   base: '/storyboard2',
+  trailingSlash: 'always',
 });
