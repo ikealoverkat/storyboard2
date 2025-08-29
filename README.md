@@ -32,15 +32,15 @@ I used Astro & VSCode! I first wrote a .md with the main contents of the documen
 ## Struggles + things I learned
 Deploying with Astro was one of (if not the hardest) part of this project... I made like four typos and they cost me four hours... (here's the complete timeline of the Astro struggle)
 
-[screenshot 1 of deployment struggle](https://imgur.com/XYiPBuv)
+![screenshot 1 of deployment struggle](https://imgur.com/XYiPBuv)
 
-[ss 2 of deployment struggle](https://imgur.com/dMkXTzF)
+![ss 2 of deployment struggle](https://imgur.com/dMkXTzF)
 
-[ss 3 of deployment struggle](https://imgur.com/qXKNLzL)
+![ss 3 of deployment struggle](https://imgur.com/qXKNLzL)
 
-[ss 4 of deployment struggle](https://imgur.com/1zDy1GW)
+![ss 4 of deployment struggle](https://imgur.com/1zDy1GW)
 
-[ss 5 of deployment struggle](https://imgur.com/rPRORks)
+![ss 5 of deployment struggle](https://imgur.com/rPRORks)
 
 It honestly shouldn't have been as hard as it was (thanks for phthallo for giving me advice btw I messed up a bunch of commits and I think accidentally merged something) but... it was really hard... this repo is called storyboard2 because I messed up too many commits and gave up on the original repo [link here if you want to judge... idk what i was doing](https://github.com/ikealoverkat/Storyboard-Renpy-Guide-Doc)
 
